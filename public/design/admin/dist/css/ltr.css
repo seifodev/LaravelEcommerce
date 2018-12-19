@@ -1,0 +1,23 @@
+	
+.sidebar-collapse .main-sidebar .sidebar-menu li small.badge {
+
+    float: right !important;
+
+}
+
+/** Sidebar Arrows **/
+.treeview > a::after,
+	
+.treeview .treeview-level > a::after
+	
+{
+   content: "\f105";
+   right: 12px;
+}
+
+.treeview.active > a::after,
+.treeview-level.active > a::after
+	
+{	
+   transform: rotate(90deg)	
+}

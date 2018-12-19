@@ -1,0 +1,136 @@
+/* .sidebar-menu li a .fa-angle-left,
+.sidebar-menu li .label, .sidebar-menu li .badge {
+	margin-top: -15px !important;
+} */
+
+.wrapper
+{
+    min-height: 100%;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+@media (min-width: 768px) and (max-width: 991px)
+{
+    .sidebar-collapse .content-header > .breadcrumb
+    {
+        right: 50px;
+    }
+}
+
+@media (max-width: 767px)
+{
+    .main-sidebar
+    {
+        -webkit-transform: translate(0, 0);
+        -ms-transform: translate(0, 0);
+        -o-transform: translate(0, 0);
+        transform: translate(0, 0);
+    }
+}
+
+body:not(.sidebar-collapse) .content,
+body:not(.sidebar-collapse) .content-header > h1
+{
+    margin-right: 0 !important;
+}
+
+@media (min-width: 768px)
+{
+    body:not(.sidebar-collapse) .main-header > .navbar
+    {
+        margin-right: 230px !important;
+    }
+}
+
+@media (max-width: 767px)
+{
+    .content,
+    .content-header > h1,
+    .main-header > .navbar
+    {
+        margin-right: 0 !important;
+    }
+
+    .sidebar-open .main-sidebar
+    {
+        -webkit-transform: translate(-230px, 0);
+        -ms-transform: translate(-230px, 0);
+        -o-transform: translate(-230px, 0);
+        transform: translate(-230px, 0);
+    }
+}
+
+@media (max-width: 767px)
+{
+    .sidebar-open .content-wrapper,
+    .sidebar-open .main-footer
+    {
+        -webkit-transform: translate(-230px, 0);
+        -ms-transform: translate(-230px, 0);
+        -o-transform: translate(-230px, 0);
+        transform: translate(-230px, 0);
+    }
+}
+
+/**/
+
+.sidebar-collapse .main-sidebar .sidebar-menu li small.badge
+{
+    float: left;
+}
+
+/** Sidebar Arrows **/
+.treeview > a::after,
+.treeview .treeview-level > a::after
+{
+    content: "\f104";
+    left: 12px;
+}
+
+.treeview.active > a::after,
+.treeview-level.active > a::after
+{
+    transform: rotate(-90deg)
+}
+
+.sidebar-menu .treeview-menu
+{
+    padding-left: 0;
+    padding-right: 5px;
+}
+
+.sidebar-menu .treeview-menu .treeview-menu
+{
+    padding-right: 20px;
+    padding-left: 0;
+}
+
+.sidebar-menu .treeview-menu > li > a
+{
+    padding: 5px 15px 5px 5px;
+}
+
+.sidebar-mini.sidebar-collapse .sidebar-menu > li:hover > a > span
+{
+    padding: 12px 20px 12px 5px;
+}
+
+.navbar-custom-menu > .navbar-nav > li > .dropdown-menu
+{
+    left: 5%;
+    right: auto;
+}
+
+/** footer **/
+@media (min-width: 768px)
+{
+    .sidebar-mini.sidebar-collapse .main-footer
+    {
+        margin-right: 50px !important;
+        margin-left: 0 !important;;
+        z-index: 840;
+    }
+}
+
