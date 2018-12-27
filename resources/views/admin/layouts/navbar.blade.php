@@ -175,6 +175,17 @@
 
                 </ul>
             </li>
+            <li class="treeview {{ activeMenu(2, 'sizes') }}">
+                <a href="#">
+                    <i class="fa fa-info"></i>
+                    <span>@lang('admin.navbar.sizes')</span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="{{ activeMenu(3, null, true)  }}"><a href="{{ route('sizes.index') }}"><i class="fa fa-circle-o"></i> @lang('admin.navbar.sizes')</a></li>
+                    <li class="{{ activeMenu(3, 'create', true)  }}"><a href="{{ route('sizes.create') }}"><i class="fa fa-circle-o"></i> @lang('admin.navbar.size_create')</a></li>
+
+                </ul>
+            </li>
             <li class="header">LABELS</li>
             <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
             <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>

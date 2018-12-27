@@ -33,6 +33,8 @@
          'mall_create' => 'New Mall',
          'colors' => 'Colors',
          'color_create' => 'New Color',
+         'sizes' => 'Sizes',
+         'size_create' => 'New Size',
      ],
      'table' => [
          'name' => 'Name',
@@ -54,6 +56,7 @@
          'shippingDeleteTitle' => 'Delete Shipping',
          'mallDeleteTitle' => 'Delete Mall',
          'colorDeleteTitle' => 'Delete Color',
+         'sizeDeleteTitle' => 'Delete Size',
          'cityDeleteTitle' => 'Delete Cities',
          'stateDeleteTitle' => 'Delete State',
          'departDeleteTitle' => 'Delete Department',
@@ -139,6 +142,9 @@
          'color' => 'Color',
          'color_en' => 'Color Name In English',
          'color_ar' => 'Color Name In Arabic',
+         'size_en' => 'Size Name In English',
+         'size_ar' => 'Size Name In Arabic',
+         'public' => 'Public',
      ],
      'userLevel' => [
          'level' => 'User Level',
@@ -146,7 +152,8 @@
          'vendor' => 'Vendor',
          'company' => 'Company'
      ],
-
+     'yes' => 'Yes',
+     'no' => 'No',
      'adminsTitle' => 'Admin Control',
      'usersTitle' => 'User Control',
      'alert' => 'Alert',
@@ -215,5 +222,11 @@
      'colorDeleted' => 'Color was deleted successfully',
      'colorCreated' => 'Color was created successfully',
      'colorUpdated' => 'Color was updated successfully',
+     'sizesTitle' => 'Sizes',
+     'createSize' => 'Create Size',
+     'editSize' => 'Edit Size',
+     'sizeDeleted' => 'Size was deleted successfully',
+     'sizeCreated' => 'Size was created successfully',
+     'sizeUpdated' => 'Size was updated successfully',
 
  ];

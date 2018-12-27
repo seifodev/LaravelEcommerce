@@ -63,6 +63,10 @@ Route::middleware('admin')->group(function () {
     Route::resource('colors', 'ColorController');
     Route::delete('colors/destroy/all', 'ColorController@destroyAll')->name('colors.destroy.all');
 
+    // Size Controller
+    Route::resource('sizes', 'SizeController');
+    Route::delete('sizes/destroy/all', 'SizeController@destroyAll')->name('sizes.destroy.all');
+
     Route::view('', 'admin.home')->name('admin.index');
     Route::post('logout', 'AuthController@logout')->name('admin.logout');
 

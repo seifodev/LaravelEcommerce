@@ -33,6 +33,8 @@
          'mall_create' => 'اضافة مول',
          'colors' => 'الالوان',
          'color_create' => 'اضافة لون',
+         'sizes' => 'الاحجام',
+         'size_create' => 'حجم جديد',
      ],
      'table' => [
          'name' => 'الاسم',
@@ -53,6 +55,7 @@
          'shippingDeleteTitle' => 'حذف شركات الشحن',
          'mallDeleteTitle' => 'حذف المولات',
          'colorDeleteTitle' => 'حذف الالوان',
+         'sizeDeleteTitle' => 'حذف الاحجام',
          'cityDeleteTitle' => 'حذف المدن',
          'stateDeleteTitle' => 'حذف المنطقة/الحي',
          'departDeleteTitle' => 'حذف القسم',
@@ -136,6 +139,9 @@
          'color' => 'اللون',
          'color_en' => 'اسم اللون بالانجليزي',
          'color_ar' => 'اسم اللون بالعربي',
+         'size_en' => 'اسم الحجم بالانجليزي',
+         'size_ar' => 'اسم الحجم بالعربي',
+         'public' => 'عام',
      ],
      'userLevel' => [
          'level' => 'مستوى العضوية',
@@ -144,7 +150,8 @@
          'company' => 'شركة'
      ],
 
-
+     'yes' => 'نعم',
+     'no' => 'لا',
      'adminsTitle' => 'التحكم بالمشرفين',
      'usersTitle' => 'التحكم بالأعضاء',
      'alert' => 'تنبيه',
@@ -213,4 +220,10 @@
      'colorDeleted' => 'تم حذف الالوان بنجاح',
      'colorCreated' => 'تم اضافة اللون بنجاح',
      'colorUpdated' => 'تم تعديل اللون بنجاح',
+     'sizesTitle' => 'الاحجام',
+     'createSize' => 'اضافة حجم',
+     'editSize' => 'تعديل الحجم',
+     'sizeDeleted' => 'تم حذف الاحجام بنجاح',
+     'sizeCreated' => 'تم اضافة الحجم بنجاح',
+     'sizeUpdated' => 'تم تعديل الحجم بنجاح',
  ];
