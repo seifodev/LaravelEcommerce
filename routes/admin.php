@@ -39,12 +39,26 @@ Route::middleware('admin')->group(function () {
     Route::resource('states', 'StateController');
     Route::delete('states/destroy/all', 'StateController@destroyAll')->name('states.destroy.all');
 
+    // Departments Controller
+    Route::resource('departments', 'DepartmentController');
+    Route::delete('departments/destroy/all', 'DepartmentController@destroyAll')->name('departments.destroy.all');
+
+    // Trademarks Controller
+    Route::resource('trademarks', 'TrademarkController');
+    Route::delete('trademarks/destroy/all', 'TrademarkController@destroyAll')->name('trademarks.destroy.all');
+
+    // Manufactures Controller
+    Route::resource('manufactures', 'ManufactureController');
+    Route::delete('manufactures/destroy/all', 'ManufactureController@destroyAll')->name('manufactures.destroy.all');
+
     Route::view('', 'admin.home')->name('admin.index');
     Route::post('logout', 'AuthController@logout')->name('admin.logout');
 
     // Settings
     Route::get('settings', 'SettingController@settingsForm')->name('admin.settings');
     Route::post('settings', 'SettingController@settings');
+
+
 
 
 
@@ -57,6 +71,6 @@ Route::middleware('admin')->group(function () {
     })->name('lang');
 
     Route::get('test', function () {
-        dd(App\User::select(['users.name as myName'])->first()->myName);
+        dd(departsJson());
     });
 });

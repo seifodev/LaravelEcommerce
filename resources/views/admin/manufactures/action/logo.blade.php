@@ -1,0 +1,1 @@
+<img src="{{ \Storage::url($logo) }}" alt="/" style="max-width: 50px">

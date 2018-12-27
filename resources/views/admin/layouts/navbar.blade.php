@@ -109,6 +109,39 @@
 
                 </ul>
             </li>
+            <li class="treeview {{ activeMenu(2, 'departments') }}">
+                <a href="#">
+                    <i class="fa fa-list"></i>
+                    <span>@lang('admin.navbar.departments')</span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="{{ activeMenu(3, null, true)  }}"><a href="{{ route('departments.index') }}"><i class="fa fa-circle-o"></i> @lang('admin.navbar.departments')</a></li>
+                    <li class="{{ activeMenu(3, 'create', true)  }}"><a href="{{ route('departments.create') }}"><i class="fa fa-circle-o"></i> @lang('admin.navbar.department_create')</a></li>
+
+                </ul>
+            </li>
+            <li class="treeview {{ activeMenu(2, 'trademarks') }}">
+                <a href="#">
+                    <i class="fa fa-trademark"></i>
+                    <span>@lang('admin.navbar.trademarks')</span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="{{ activeMenu(3, null, true)  }}"><a href="{{ route('trademarks.index') }}"><i class="fa fa-circle-o"></i> @lang('admin.navbar.trademarks')</a></li>
+                    <li class="{{ activeMenu(3, 'create', true)  }}"><a href="{{ route('trademarks.create') }}"><i class="fa fa-circle-o"></i> @lang('admin.navbar.trademark_create')</a></li>
+
+                </ul>
+            </li>
+            <li class="treeview {{ activeMenu(2, 'manufactures') }}">
+                <a href="#">
+                    <i class="fa fa-gears"></i>
+                    <span>@lang('admin.navbar.manufactures')</span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="{{ activeMenu(3, null, true)  }}"><a href="{{ route('manufactures.index') }}"><i class="fa fa-circle-o"></i> @lang('admin.navbar.manufactures')</a></li>
+                    <li class="{{ activeMenu(3, 'create', true)  }}"><a href="{{ route('manufactures.create') }}"><i class="fa fa-circle-o"></i> @lang('admin.navbar.manufacture_create')</a></li>
+
+                </ul>
+            </li>
             <li class="header">LABELS</li>
             <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
             <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>
