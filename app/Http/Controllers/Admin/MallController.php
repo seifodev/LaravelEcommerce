@@ -4,22 +4,22 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\DataTables\ManufactureDataTable;
-use App\Model\Manufacture;
+use App\DataTables\MallDataTable;
+use App\Model\Mall;
 use Up;
 
-class ManufactureController extends Controller
+class MallController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @param ManufactureDataTable $manufacture
+     * @param MallDataTable $mall
      * @return \Illuminate\Http\Response
      */
-    public function index(ManufactureDataTable $manufacture)
+    public function index(MallDataTable $mall)
     {
         //
-        return $manufacture->render('admin.manufactures.index', ['title' => trans('admin.manufacturesTitle')]);
+        return $mall->render('admin.malls.index', ['title' => trans('admin.mallsTitle')]);
     }
 
     /**
@@ -30,7 +30,10 @@ class ManufactureController extends Controller
     public function create()
     {
         //
-        return view('admin.manufactures.create', ['title' => trans('admin.createManufacture')]);
+        $country_name = 'name_' . lang() . ' as name';
+        $countries = \App\Model\Country::select('id', $country_name)->pluck('name', 'id')->all();
+        $title = trans('admin.createMall');
+        return view('admin.malls.create', compact('title', 'countries'));
     }
 
     /**
@@ -56,28 +59,29 @@ class ManufactureController extends Controller
             'lat' => 'nullable',
             'lng' => 'nullable',
             'logo' => validImg(),
+            'country_id' => 'required|exists:countries,id'
         ], [], [
-            'name_ar' => trans('admin.form.manufacture_ar'),
-            'name_en' => trans('admin.form.manufacture_en'),
+            'name_ar' => trans('admin.form.mall_ar'),
+            'name_en' => trans('admin.form.mall_en'),
             'contact_name' => trans('admin.form.manufacture_contact'),
             'email' => trans('admin.form.email'),
             'mobile' => trans('admin.form.mobile'),
             'web_site' => trans('admin.form.website'),
             'facebook' => trans('admin.form.facebook'),
             'twitter' => trans('admin.form.twitter'),
-            'logo' => trans('admin.form.manufacture_logo'),
+            'logo' => trans('admin.form.logo'),
         ]);
 
         if($request->hasFile('logo'))
         {
             $data['logo'] =  Up::upload($request, [
                 'file' => 'logo',
-                'path' => 'manufactures',
+                'path' => 'malls',
             ]);
         }
 
-        $manufacture = Manufacture::create($data);
-        return redirect()->route('manufactures.index')->with(['success' => trans('admin.manufactureCreated')]);
+        $mall = Mall::create($data);
+        return redirect()->route('malls.index')->with(['success' => trans('admin.mallCreated')]);
     }
 
     /**
@@ -100,10 +104,12 @@ class ManufactureController extends Controller
     public function edit($id)
     {
         //
-        $manufacture = Manufacture::findOrFail($id);
+        $mall = Mall::findOrFail($id);
         $name = 'name_' . lang();
-        $title = trans('admin.editManufacture', ['name' => $manufacture->$name]);
-        return view('admin.manufactures.edit', compact('manufacture', 'title'));
+        $title = trans('admin.editMall', ['name' => $mall->$name]);
+        $country_name = 'name_' . lang() . ' as name';
+        $countries = \App\Model\Country::select('id', $country_name)->pluck('name', 'id')->all();
+        return view('admin.malls.edit', compact('mall', 'title', 'countries'));
     }
 
     /**
@@ -129,26 +135,27 @@ class ManufactureController extends Controller
             'lat' => 'nullable',
             'lng' => 'nullable',
             'logo' => validImg(),
+            'country_id' => 'required|exists:countries,id'
         ], [], [
-            'name_ar' => trans('admin.form.manufacture_ar'),
-            'name_en' => trans('admin.form.manufacture_en'),
+            'name_ar' => trans('admin.form.mall_ar'),
+            'name_en' => trans('admin.form.mall_en'),
             'contact_name' => trans('admin.form.manufacture_contact'),
             'email' => trans('admin.form.email'),
             'mobile' => trans('admin.form.mobile'),
             'web_site' => trans('admin.form.website'),
             'facebook' => trans('admin.form.facebook'),
             'twitter' => trans('admin.form.twitter'),
-            'logo' => trans('admin.form.manufacture_logo'),
+            'logo' => trans('admin.form.logo'),
         ]);
 
-        $manufacture = Manufacture::findOrFail($id);
+        $mall = Mall::findOrFail($id);
 
         if($request->hasFile('logo'))
         {
             $data['logo'] =  Up::upload($request, [
                 'file' => 'logo',
-                'path' => 'manufactures',
-                'delete' => $manufacture->logo,
+                'path' => 'malls',
+                'delete' => $mall->logo,
             ]);
         } else
         {
@@ -157,9 +164,9 @@ class ManufactureController extends Controller
 
 
 
-        $manufacture->update($data);;
+        $mall->update($data);;
 
-        return back()->with(['success' => trans('admin.manufactureUpdated')]);
+        return back()->with(['success' => trans('admin.mallUpdated')]);
 
     }
 
@@ -183,16 +190,16 @@ class ManufactureController extends Controller
         {
             foreach($request->input('check') as $id)
             {
-                $manufacture = Manufacture::findOrFail($id);
-                \Storage::delete($manufacture->logo);
-                $manufacture->delete();
+                $mall = Mall::findOrFail($id);
+                \Storage::delete($mall->logo);
+                $mall->delete();
             }
         } else
         {
             return back();
         }
 
-        return back()->with(['success' => trans('admin.manufactureDeleted')]);
+        return back()->with(['success' => trans('admin.mallDeleted')]);
     }
 
 }

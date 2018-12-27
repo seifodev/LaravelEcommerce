@@ -142,6 +142,39 @@
 
                 </ul>
             </li>
+            <li class="treeview {{ activeMenu(2, 'shippings') }}">
+                <a href="#">
+                    <i class="fa fa-truck"></i>
+                    <span>@lang('admin.navbar.shippings')</span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="{{ activeMenu(3, null, true)  }}"><a href="{{ route('shippings.index') }}"><i class="fa fa-circle-o"></i> @lang('admin.navbar.shippings')</a></li>
+                    <li class="{{ activeMenu(3, 'create', true)  }}"><a href="{{ route('shippings.create') }}"><i class="fa fa-circle-o"></i> @lang('admin.navbar.shipping_create')</a></li>
+
+                </ul>
+            </li>
+            <li class="treeview {{ activeMenu(2, 'malls') }}">
+                <a href="#">
+                    <i class="fa fa-building"></i>
+                    <span>@lang('admin.navbar.malls')</span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="{{ activeMenu(3, null, true)  }}"><a href="{{ route('malls.index') }}"><i class="fa fa-circle-o"></i> @lang('admin.navbar.malls')</a></li>
+                    <li class="{{ activeMenu(3, 'create', true)  }}"><a href="{{ route('malls.create') }}"><i class="fa fa-circle-o"></i> @lang('admin.navbar.mall_create')</a></li>
+
+                </ul>
+            </li>
+            <li class="treeview {{ activeMenu(2, 'colors') }}">
+                <a href="#">
+                    <i class="fa fa-paint-brush"></i>
+                    <span>@lang('admin.navbar.colors')</span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="{{ activeMenu(3, null, true)  }}"><a href="{{ route('colors.index') }}"><i class="fa fa-circle-o"></i> @lang('admin.navbar.colors')</a></li>
+                    <li class="{{ activeMenu(3, 'create', true)  }}"><a href="{{ route('colors.create') }}"><i class="fa fa-circle-o"></i> @lang('admin.navbar.color_create')</a></li>
+
+                </ul>
+            </li>
             <li class="header">LABELS</li>
             <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
             <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>

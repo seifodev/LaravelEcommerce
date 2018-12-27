@@ -51,6 +51,18 @@ Route::middleware('admin')->group(function () {
     Route::resource('manufactures', 'ManufactureController');
     Route::delete('manufactures/destroy/all', 'ManufactureController@destroyAll')->name('manufactures.destroy.all');
 
+    // Shipping Controller
+    Route::resource('shippings', 'ShippingController');
+    Route::delete('shippings/destroy/all', 'ShippingController@destroyAll')->name('shippings.destroy.all');
+
+    // Mall Controller
+    Route::resource('malls', 'MallController');
+    Route::delete('malls/destroy/all', 'MallController@destroyAll')->name('malls.destroy.all');
+
+    // Color Controller
+    Route::resource('colors', 'ColorController');
+    Route::delete('colors/destroy/all', 'ColorController@destroyAll')->name('colors.destroy.all');
+
     Route::view('', 'admin.home')->name('admin.index');
     Route::post('logout', 'AuthController@logout')->name('admin.logout');
 
