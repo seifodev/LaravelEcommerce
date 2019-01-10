@@ -44,16 +44,18 @@ class CountryController extends Controller
         //
 
         $data = $this->validate($request, [
-            'name_ar' => 'required|min:2|max:16',
-            'name_en' => 'required|min:2|max:16',
+            'name_ar' => 'required|min:2',
+            'name_en' => 'required|min:2',
             'mob' => 'required',
             'code' => 'required',
+            'currency' => 'required|string',
             'logo' => validImg(),
         ], [], [
             'name_ar' => trans('admin.form.country_ar'),
             'name_en' => trans('admin.form.country_en'),
             'mob' => trans('admin.form.country_mob'),
             'code' => trans('admin.form.country_code'),
+            'currency' => trans('admin.form.currency'),
             'logo' => trans('admin.form.country_logo'),
         ]);
 
@@ -106,16 +108,18 @@ class CountryController extends Controller
         //
 
         $data = $this->validate($request, [
-            'name_ar' => 'required|min:2|max:16',
-            'name_en' => 'required|min:2|max:16',
+            'name_ar' => 'required|min:2',
+            'name_en' => 'required|min:2',
             'mob' => 'required',
             'code' => 'required',
+            'currency' => 'required|string',
             'logo' => 'nullable|image:mimes:jpeg,bmp,gif,png',
         ], [], [
             'name_ar' => trans('admin.form.country_ar'),
             'name_en' => trans('admin.form.country_en'),
             'mob' => trans('admin.form.country_mob'),
             'code' => trans('admin.form.country_code'),
+            'currency' => trans('admin.form.currency'),
             'logo' => trans('admin.form.country_logo'),
         ]);
 

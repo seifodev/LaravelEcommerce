@@ -48,6 +48,13 @@
                 </div>
             </div>
 
+            <div class="form-group {{ $errors->has('currency') ? 'has-error' : '' }}">
+                {!! Form::label('inputCurrency', trans('admin.form.currency'), ['class' => 'control-label col-sm-2']) !!}
+                <div class="col-md-8 col-lg-6">
+                    {!! Form::text('currency', $country->currency, ['id' => 'inputCurrency', 'class' => 'form-control', 'required']) !!}
+                </div>
+            </div>
+
             <div class="form-group {{ $errors->has('logo') ? 'has-error' : '' }}">
                 {!! Form::label('inputLogo', trans('admin.form.country_logo'), ['class' => 'control-label col-sm-2']) !!}
                 <div class="col-md-8 col-lg-6">

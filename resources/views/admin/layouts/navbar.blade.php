@@ -186,6 +186,28 @@
 
                 </ul>
             </li>
+            <li class="treeview {{ activeMenu(2, 'weights') }}">
+                <a href="#">
+                    <i class="fa fa-balance-scale"></i>
+                    <span>@lang('admin.navbar.weights')</span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="{{ activeMenu(3, null, true)  }}"><a href="{{ route('weights.index') }}"><i class="fa fa-circle-o"></i> @lang('admin.navbar.weights')</a></li>
+                    <li class="{{ activeMenu(3, 'create', true)  }}"><a href="{{ route('weights.create') }}"><i class="fa fa-circle-o"></i> @lang('admin.navbar.weight_create')</a></li>
+
+                </ul>
+            </li>
+            <li class="treeview {{ activeMenu(2, 'products') }}">
+                <a href="#">
+                    <i class="fa fa-file-image-o"></i>
+                    <span>@lang('admin.navbar.products')</span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="{{ activeMenu(3, null, true)  }}"><a href="{{ route('products.index') }}"><i class="fa fa-circle-o"></i> @lang('admin.navbar.products')</a></li>
+                    <li class="{{ activeMenu(3, 'create', true)  }}"><a href="{{ route('products.create') }}"><i class="fa fa-circle-o"></i> @lang('admin.navbar.product_create')</a></li>
+
+                </ul>
+            </li>
             <li class="header">LABELS</li>
             <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
             <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>

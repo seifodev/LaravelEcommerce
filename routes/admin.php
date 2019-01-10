@@ -67,8 +67,20 @@ Route::middleware('admin')->group(function () {
     Route::resource('sizes', 'SizeController');
     Route::delete('sizes/destroy/all', 'SizeController@destroyAll')->name('sizes.destroy.all');
 
+    // Weight Controller
+    Route::resource('weights', 'WeightController');
+    Route::delete('weights/destroy/all', 'WeightController@destroyAll')->name('weights.destroy.all');
+
+    // Product Controller
+    Route::resource('products', 'ProductController');
+    Route::delete('products/destroy/all', 'WeightController@destroyAll')->name('products.destroy.all');
+    Route::post('products/upload/{product}', 'ProductController@upload')->name('products.upload');
+    Route::delete('products/upload/{file}', 'ProductController@deleteFile')->name('products.deleteFile');
+
     Route::view('', 'admin.home')->name('admin.index');
     Route::post('logout', 'AuthController@logout')->name('admin.logout');
+
+
 
     // Settings
     Route::get('settings', 'SettingController@settingsForm')->name('admin.settings');
@@ -87,6 +99,10 @@ Route::middleware('admin')->group(function () {
     })->name('lang');
 
     Route::get('test', function () {
-        dd(departsJson());
+        $images = \App\Model\Product::find(1)->files;
+        foreach($images as $image)
+        {
+            echo '<img src="' . \Storage::url($image->full_file) . '"><br>';
+        }
     });
 });
